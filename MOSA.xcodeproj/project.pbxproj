@@ -1,0 +1,293 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		027B8921143F022A001F7945 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027B8920143F022A001F7945 /* Cocoa.framework */; };
+		027B892B143F022A001F7945 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 027B8929143F022A001F7945 /* InfoPlist.strings */; };
+		027B892D143F022A001F7945 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 027B892C143F022A001F7945 /* main.m */; };
+		027B8931143F022A001F7945 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 027B892F143F022A001F7945 /* Credits.rtf */; };
+		027B8934143F022B001F7945 /* MOSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 027B8933143F022B001F7945 /* MOSAppDelegate.m */; };
+		027B8937143F022B001F7945 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 027B8935143F022B001F7945 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		027B891C143F022A001F7945 /* MOSA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MOSA.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		027B8920143F022A001F7945 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		027B8923143F022A001F7945 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		027B8924143F022A001F7945 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		027B8925143F022A001F7945 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		027B8928143F022A001F7945 /* MOSA-Info.plist */ = {isa = PBXFileReference; path = "MOSA-Info.plist"; sourceTree = "<group>"; };
+		027B892A143F022A001F7945 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		027B892C143F022A001F7945 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		027B892E143F022A001F7945 /* MOSA-Prefix.pch */ = {isa = PBXFileReference; path = "MOSA-Prefix.pch"; sourceTree = "<group>"; };
+		027B8930143F022A001F7945 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		027B8932143F022A001F7945 /* MOSAppDelegate.h */ = {isa = PBXFileReference; path = MOSAppDelegate.h; sourceTree = "<group>"; };
+		027B8933143F022B001F7945 /* MOSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MOSAppDelegate.m; sourceTree = "<group>"; };
+		027B8936143F022B001F7945 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		027B8919143F022A001F7945 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				027B8921143F022A001F7945 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		027B8911143F022A001F7945 = {
+			isa = PBXGroup;
+			children = (
+				027B8926143F022A001F7945 /* MOSA */,
+				027B891F143F022A001F7945 /* Frameworks */,
+				027B891D143F022A001F7945 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		027B891D143F022A001F7945 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				027B891C143F022A001F7945 /* MOSA.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		027B891F143F022A001F7945 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				027B8920143F022A001F7945 /* Cocoa.framework */,
+				027B8922143F022A001F7945 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		027B8922143F022A001F7945 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				027B8923143F022A001F7945 /* AppKit.framework */,
+				027B8924143F022A001F7945 /* CoreData.framework */,
+				027B8925143F022A001F7945 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		027B8926143F022A001F7945 /* MOSA */ = {
+			isa = PBXGroup;
+			children = (
+				027B8932143F022A001F7945 /* MOSAppDelegate.h */,
+				027B8933143F022B001F7945 /* MOSAppDelegate.m */,
+				027B8935143F022B001F7945 /* MainMenu.xib */,
+				027B8927143F022A001F7945 /* Supporting Files */,
+			);
+			path = MOSA;
+			sourceTree = "<group>";
+		};
+		027B8927143F022A001F7945 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				027B8928143F022A001F7945 /* MOSA-Info.plist */,
+				027B8929143F022A001F7945 /* InfoPlist.strings */,
+				027B892C143F022A001F7945 /* main.m */,
+				027B892E143F022A001F7945 /* MOSA-Prefix.pch */,
+				027B892F143F022A001F7945 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		027B891B143F022A001F7945 /* MOSA */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 027B893A143F022B001F7945 /* Build configuration list for PBXNativeTarget "MOSA" */;
+			buildPhases = (
+				027B8918143F022A001F7945 /* Sources */,
+				027B8919143F022A001F7945 /* Frameworks */,
+				027B891A143F022A001F7945 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MOSA;
+			productName = MOSA;
+			productReference = 027B891C143F022A001F7945 /* MOSA.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		027B8913143F022A001F7945 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 027B8916143F022A001F7945 /* Build configuration list for PBXProject "MOSA" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 027B8911143F022A001F7945;
+			productRefGroup = 027B891D143F022A001F7945 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				027B891B143F022A001F7945 /* MOSA */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		027B891A143F022A001F7945 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				027B892B143F022A001F7945 /* InfoPlist.strings in Resources */,
+				027B8931143F022A001F7945 /* Credits.rtf in Resources */,
+				027B8937143F022B001F7945 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		027B8918143F022A001F7945 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				027B892D143F022A001F7945 /* main.m in Sources */,
+				027B8934143F022B001F7945 /* MOSAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		027B8929143F022A001F7945 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				027B892A143F022A001F7945 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		027B892F143F022A001F7945 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				027B8930143F022A001F7945 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		027B8935143F022B001F7945 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				027B8936143F022B001F7945 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		027B8938143F022B001F7945 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		027B8939143F022B001F7945 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		027B893B143F022B001F7945 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MOSA/MOSA-Prefix.pch";
+				INFOPLIST_FILE = "MOSA/MOSA-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		027B893C143F022B001F7945 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MOSA/MOSA-Prefix.pch";
+				INFOPLIST_FILE = "MOSA/MOSA-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		027B8916143F022A001F7945 /* Build configuration list for PBXProject "MOSA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				027B8938143F022B001F7945 /* Debug */,
+				027B8939143F022B001F7945 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		027B893A143F022B001F7945 /* Build configuration list for PBXNativeTarget "MOSA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				027B893B143F022B001F7945 /* Debug */,
+				027B893C143F022B001F7945 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 027B8913143F022A001F7945 /* Project object */;
+}
