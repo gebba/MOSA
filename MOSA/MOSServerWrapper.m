@@ -6,15 +6,21 @@
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "ServerWrapper.h"
+#import "MOSServerWrapper.h"
 #import "RegexKitLite.h"
 
 static NSTask *theServer;
 
-@implementation ServerWrapper
+static NSString *const ChatMsgRegex = @".?+INFO.?+ <([a-zA-Z0-9]+)> (.+)$";
+static NSString *const PlayerListRegex = @"Connected players: ([a-zA-Z0-9].+)";
+static NSString *const PlayerCountRegex = @"^Player count: ([+\\-]?[0-9]+)";
+static NSString *const PlayerJoinedRegex = @".?+INFO.?+ ([a-zA-Z0-9]+) .+ logged in$";
+static NSString *const PlayerDisconnectedRegex = @".?+INFO.?+ ([a-zA-Z0-9]+) lost connection: .+";
+
+@implementation MOSServerWrapper
 @synthesize running, delegate, lastJoined;
 
-- (id)initWithDelegate:(id<ServerWrapperDelegate>)newDelegate {
+- (id)initWithDelegate:(id<MOSServerWrapperDelegate>)newDelegate {
 
 	self = [super init];
 	
@@ -113,32 +119,26 @@ static NSTask *theServer;
 	
 	NSMutableString *string = [[NSMutableString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 	
-	NSString *chatmessage = @".?+INFO.?+ <([a-zA-Z0-9]+)> (.+)$";
-	NSString *playerList = @"Connected players: ([a-zA-Z0-9].+)";
-	NSString *playerCount = @"^Player count: ([+\\-]?[0-9]+)";
-	NSString *playerJoin = @".?+INFO.?+ ([a-zA-Z0-9]+) .+ logged in$";
-	NSString *playerDisconnect = @".?+INFO.?+ ([a-zA-Z0-9]+) lost connection: .+";
-	
 	NSArray *stringArray = [string componentsSeparatedByString:@"\n"];
 
 	for (NSString *newString in stringArray) {
 		if (![newString isEqualToString:@""] && delegate != nil) {
 			
-			if ([newString isMatchedByRegex:playerCount]) {
-				int playerCountInt = [[newString stringByMatching:playerCount capture:1L] intValue];
+			if ([newString isMatchedByRegex:PlayerListRegex]) {
+				int playerCountInt = [[newString stringByMatching:PlayerCountRegex capture:1L] intValue];
 				[delegate serverWrapperPlayerCountUpdated:playerCountInt];
-			} else if ([newString isMatchedByRegex:playerList]) {
-				NSString *playerListString = [newString stringByMatching:playerList capture:1L];
+			} else if ([newString isMatchedByRegex:PlayerListRegex]) {
+				NSString *playerListString = [newString stringByMatching:PlayerCountRegex capture:1L];
 				NSArray *playerListArray = [playerListString componentsSeparatedByString:@", "];
 				[delegate serverWrapperPlayersListed:playerListArray];
-			} else if ([newString isMatchedByRegex:playerJoin]) {
-				[delegate serverWrapperPlayerJoined:[newString stringByMatching:playerJoin capture:1L]];
-				lastJoined = [newString stringByMatching:playerJoin capture:1L];
-			} else if ([newString isMatchedByRegex:chatmessage]) {
-				[delegate serverWrapperChatMessageReceivedFrom:[newString stringByMatching:chatmessage capture:1L]
-													   message:[newString stringByMatching:chatmessage capture:2L]];
-			} else if ([newString isMatchedByRegex:playerDisconnect]) {
-				[delegate serverWrapperPlayerDisconnected:[newString stringByMatching:playerDisconnect capture:1L]];
+			} else if ([newString isMatchedByRegex:PlayerJoinedRegex]) {
+				[delegate serverWrapperPlayerJoined:[newString stringByMatching:PlayerJoinedRegex capture:1L]];
+				lastJoined = [newString stringByMatching:PlayerJoinedRegex capture:1L];
+			} else if ([newString isMatchedByRegex:ChatMsgRegex]) {
+				[delegate serverWrapperChatMessageReceivedFrom:[newString stringByMatching:ChatMsgRegex capture:1L]
+													   message:[newString stringByMatching:ChatMsgRegex capture:2L]];
+			} else if ([newString isMatchedByRegex:PlayerDisconnectedRegex]) {
+				[delegate serverWrapperPlayerDisconnected:[newString stringByMatching:PlayerDisconnectedRegex capture:1L]];
 			}
 
 			
@@ -268,13 +268,11 @@ static NSTask *theServer;
 }
 
 - (void)dealloc {
-	[super dealloc];
-	[(NSObject*)delegate release];
+    [(NSObject*)delegate release];
 	[theServer terminate];
 	[theServer release];
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
-	
-	
+	[super dealloc];
 }
 
 @end
