@@ -30,8 +30,6 @@
 @end
 
 @interface MOSServerWrapper : NSObject {
-
-	id<MOSServerWrapperDelegate> delegate;
 	
 	NSInteger javaMem;
 	
@@ -47,12 +45,16 @@
 	//public
 	BOOL running;
 	NSString *lastJoined;
+    
+    NSMutableArray *players;
 	
 }
 
-@property (nonatomic, retain) id<MOSServerWrapperDelegate> delegate;
-@property (nonatomic, getter = isRunning) BOOL running;
-@property (nonatomic, retain) NSString *lastJoined;
+@property (retain) id<MOSServerWrapperDelegate> delegate;
+@property (getter = isRunning) BOOL running;
+@property (retain) NSString *lastJoined;
+
+@property (readonly) NSMutableArray *players;
 
 - (id)initWithDelegate:(id<MOSServerWrapperDelegate>)newDelegate;
 

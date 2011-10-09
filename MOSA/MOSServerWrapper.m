@@ -8,6 +8,7 @@
 
 #import "MOSServerWrapper.h"
 #import "RegexKitLite.h"
+#import "MOSPlayer.h"
 
 static NSTask *theServer;
 
@@ -18,7 +19,7 @@ static NSString *const PlayerJoinedRegex = @".?+INFO.?+ ([a-zA-Z0-9]+) .+ logged
 static NSString *const PlayerDisconnectedRegex = @".?+INFO.?+ ([a-zA-Z0-9]+) lost connection: .+";
 
 @implementation MOSServerWrapper
-@synthesize running, delegate, lastJoined;
+@synthesize delegate, running, lastJoined, players;
 
 - (id)initWithDelegate:(id<MOSServerWrapperDelegate>)newDelegate {
 
@@ -26,12 +27,9 @@ static NSString *const PlayerDisconnectedRegex = @".?+INFO.?+ ([a-zA-Z0-9]+) los
 	
 	[self reloadSettings];
 	
-	self.delegate = newDelegate;
 	self.running = NO;
 	
 	[self setupServerTask];
-	
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadSettings) name:@"ServerSettingsSaved" object:delegate];
 	
 	return self;
 	
@@ -122,18 +120,16 @@ static NSString *const PlayerDisconnectedRegex = @".?+INFO.?+ ([a-zA-Z0-9]+) los
 	NSArray *stringArray = [string componentsSeparatedByString:@"\n"];
 
 	for (NSString *newString in stringArray) {
-		if (![newString isEqualToString:@""] && delegate != nil) {
+		if (![newString isEqualToString:@""]) {
 			
 			if ([newString isMatchedByRegex:PlayerListRegex]) {
-				int playerCountInt = [[newString stringByMatching:PlayerCountRegex capture:1L] intValue];
-				[delegate serverWrapperPlayerCountUpdated:playerCountInt];
-			} else if ([newString isMatchedByRegex:PlayerListRegex]) {
 				NSString *playerListString = [newString stringByMatching:PlayerCountRegex capture:1L];
 				NSArray *playerListArray = [playerListString componentsSeparatedByString:@", "];
 				[delegate serverWrapperPlayersListed:playerListArray];
 			} else if ([newString isMatchedByRegex:PlayerJoinedRegex]) {
-				[delegate serverWrapperPlayerJoined:[newString stringByMatching:PlayerJoinedRegex capture:1L]];
-				lastJoined = [newString stringByMatching:PlayerJoinedRegex capture:1L];
+                MOSPlayer *player = [[MOSPlayer alloc] initWithName:[newString stringByMatching:PlayerJoinedRegex capture:1L]];
+                [players addObject:player];
+                [player release];
 			} else if ([newString isMatchedByRegex:ChatMsgRegex]) {
 				[delegate serverWrapperChatMessageReceivedFrom:[newString stringByMatching:ChatMsgRegex capture:1L]
 													   message:[newString stringByMatching:ChatMsgRegex capture:2L]];

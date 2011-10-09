@@ -11,4 +11,19 @@
 @implementation MOSPlayer
 @synthesize name;
 
+- (id)initWithName:(NSString *)playerName
+{
+    self = [super init];
+    if (self) {
+        [self setName:playerName];
+    }
+    
+    return self;
+}
+
+- (BOOL)isEqual:(id)object
+{
+    return [object isKindOfClass:[MOSPlayer class]] && [self.name isEqual:[(MOSPlayer *)object name]];
+}
+
 @end
