@@ -15,6 +15,9 @@
 		027B8937143F022B001F7945 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 027B8935143F022B001F7945 /* MainMenu.xib */; };
 		027B8942143F024E001F7945 /* MOSServerWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 027B8940143F024E001F7945 /* MOSServerWrapper.m */; };
 		027B8953143F12FF001F7945 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 027B8952143F12FF001F7945 /* RegexKitLite.m */; };
+		028A5FBD14424DF000E92ED4 /* ServerWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 028A5FBC14424DF000E92ED4 /* ServerWindow.xib */; };
+		028A5FC414424E7200E92ED4 /* MOSServerWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 028A5FC314424E7200E92ED4 /* MOSServerWindowController.m */; };
+		028A5FC8144258C000E92ED4 /* MOSPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 028A5FC7144258C000E92ED4 /* MOSPlayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,10 +34,15 @@
 		027B8932143F022A001F7945 /* MOSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MOSAppDelegate.h; sourceTree = "<group>"; };
 		027B8933143F022B001F7945 /* MOSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MOSAppDelegate.m; sourceTree = "<group>"; };
 		027B8936143F022B001F7945 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		027B893F143F024E001F7945 /* MOSServerWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; path = MOSServerWrapper.h; sourceTree = "<group>"; };
+		027B893F143F024E001F7945 /* MOSServerWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOSServerWrapper.h; sourceTree = "<group>"; };
 		027B8940143F024E001F7945 /* MOSServerWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOSServerWrapper.m; sourceTree = "<group>"; };
 		027B8951143F12FF001F7945 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
 		027B8952143F12FF001F7945 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
+		028A5FBC14424DF000E92ED4 /* ServerWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServerWindow.xib; sourceTree = "<group>"; };
+		028A5FC214424E7200E92ED4 /* MOSServerWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOSServerWindowController.h; sourceTree = "<group>"; };
+		028A5FC314424E7200E92ED4 /* MOSServerWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOSServerWindowController.m; sourceTree = "<group>"; };
+		028A5FC6144258C000E92ED4 /* MOSPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOSPlayer.h; sourceTree = "<group>"; };
+		028A5FC7144258C000E92ED4 /* MOSPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOSPlayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +96,7 @@
 		027B8926143F022A001F7945 /* MOSA */ = {
 			isa = PBXGroup;
 			children = (
+				028A5FC51442587900E92ED4 /* Data */,
 				027B8951143F12FF001F7945 /* RegexKitLite.h */,
 				027B8952143F12FF001F7945 /* RegexKitLite.m */,
 				027B893F143F024E001F7945 /* MOSServerWrapper.h */,
@@ -95,6 +104,9 @@
 				027B8932143F022A001F7945 /* MOSAppDelegate.h */,
 				027B8933143F022B001F7945 /* MOSAppDelegate.m */,
 				027B8935143F022B001F7945 /* MainMenu.xib */,
+				028A5FC214424E7200E92ED4 /* MOSServerWindowController.h */,
+				028A5FC314424E7200E92ED4 /* MOSServerWindowController.m */,
+				028A5FBC14424DF000E92ED4 /* ServerWindow.xib */,
 				027B8927143F022A001F7945 /* Supporting Files */,
 			);
 			path = MOSA;
@@ -110,6 +122,15 @@
 				027B892F143F022A001F7945 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		028A5FC51442587900E92ED4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				028A5FC6144258C000E92ED4 /* MOSPlayer.h */,
+				028A5FC7144258C000E92ED4 /* MOSPlayer.m */,
+			);
+			name = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +186,7 @@
 				027B892B143F022A001F7945 /* InfoPlist.strings in Resources */,
 				027B8931143F022A001F7945 /* Credits.rtf in Resources */,
 				027B8937143F022B001F7945 /* MainMenu.xib in Resources */,
+				028A5FBD14424DF000E92ED4 /* ServerWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +201,8 @@
 				027B8934143F022B001F7945 /* MOSAppDelegate.m in Sources */,
 				027B8942143F024E001F7945 /* MOSServerWrapper.m in Sources */,
 				027B8953143F12FF001F7945 /* RegexKitLite.m in Sources */,
+				028A5FC414424E7200E92ED4 /* MOSServerWindowController.m in Sources */,
+				028A5FC8144258C000E92ED4 /* MOSPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
