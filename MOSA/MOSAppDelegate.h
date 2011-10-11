@@ -8,7 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface MOSAppDelegate : NSObject <NSApplicationDelegate>
+@class MOSServerWindowController;
+
+@interface MOSAppDelegate : NSObject <NSApplicationDelegate> {
+    MOSServerWindowController *serverWindowController;
+}
 
 @property (assign) IBOutlet NSWindow *window;
 

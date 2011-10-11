@@ -7,6 +7,13 @@
 //
 
 #import "MOSAppDelegate.h"
+#import "MOSServerWindowController.h"
+
+@interface MOSAppDelegate()
+
+- (void)loadMainWindowController:(NSTimer *)timer;
+
+@end
 
 @implementation MOSAppDelegate
 
@@ -19,7 +26,28 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+    NSTimer *splashTimer = [NSTimer timerWithTimeInterval:3 
+                                                   target:self
+                                                 selector:@selector(loadMainWindowController:) 
+                                                 userInfo:nil
+                                                  repeats:NO];
+    [[NSRunLoop currentRunLoop] addTimer:splashTimer forMode:NSDefaultRunLoopMode];
+}
+
+- (void)loadMainWindowController:(NSTimer *)timer
+{
+     serverWindowController = [[MOSServerWindowController alloc] initWithWindowNibName:@"ServerWindow"];
+    NSDictionary *fadeOut = [NSDictionary dictionaryWithObjectsAndKeys:
+                      self.window, NSViewAnimationTargetKey,
+                      NSViewAnimationFadeOutEffect,
+                      NSViewAnimationEffectKey, nil];
+    
+    NSViewAnimation *animation = [[NSViewAnimation alloc] initWithViewAnimations:[NSArray arrayWithObject:fadeOut]];
+    [animation setAnimationBlockingMode:NSAnimationBlocking];
+    [animation setDuration:1];
+    [animation startAnimation];
+    [self.window release];
+    [self setWindow:serverWindowController.window];
 }
 
 @end
