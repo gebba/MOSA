@@ -127,14 +127,14 @@ static NSString *const PlayerDisconnectedRegex = @".?+INFO.?+ ([a-zA-Z0-9]+) los
 				NSArray *playerListArray = [playerListString componentsSeparatedByString:@", "];
 				[delegate serverWrapperPlayersListed:playerListArray];
 			} else if ([newString isMatchedByRegex:PlayerJoinedRegex]) {
-                MOSPlayer *player = [[MOSPlayer alloc] initWithName:[newString stringByMatching:PlayerJoinedRegex capture:1L]];
-                [players addObject:player];
-                [player release];
+                NSString *playerName = [newString stringByMatching:PlayerJoinedRegex capture:1L];
+                [[self mutableArrayValueForKey:@"players"] addObject:[MOSPlayer playerWithName:playerName]];
 			} else if ([newString isMatchedByRegex:ChatMsgRegex]) {
 				[delegate serverWrapperChatMessageReceivedFrom:[newString stringByMatching:ChatMsgRegex capture:1L]
 													   message:[newString stringByMatching:ChatMsgRegex capture:2L]];
 			} else if ([newString isMatchedByRegex:PlayerDisconnectedRegex]) {
-				[delegate serverWrapperPlayerDisconnected:[newString stringByMatching:PlayerDisconnectedRegex capture:1L]];
+                NSString *playerName = [newString stringByMatching:PlayerDisconnectedRegex capture:1L];
+                [[self mutableArrayValueForKey:@"players"] removeObject:[MOSPlayer playerWithName:playerName]];
 			}
 
 			

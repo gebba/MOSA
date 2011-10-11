@@ -12,6 +12,8 @@
 
 @property (retain) NSString *name;
 
++ (id)playerWithName:(NSString *)playerName;
+
 - (id)initWithName:(NSString *)playerName;
 
 @end

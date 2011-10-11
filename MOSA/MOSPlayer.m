@@ -11,6 +11,11 @@
 @implementation MOSPlayer
 @synthesize name;
 
++ (id)playerWithName:(NSString *)playerName
+{
+    return [[[self alloc] initWithName:playerName] autorelease];
+}
+
 - (id)initWithName:(NSString *)playerName
 {
     self = [super init];
