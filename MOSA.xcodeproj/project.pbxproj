@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02430A671444DF8300CFDD14 /* MOSDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 02430A661444DF8300CFDD14 /* MOSDownloadOperation.m */; };
 		027B8921143F022A001F7945 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027B8920143F022A001F7945 /* Cocoa.framework */; };
 		027B892B143F022A001F7945 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 027B8929143F022A001F7945 /* InfoPlist.strings */; };
 		027B892D143F022A001F7945 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 027B892C143F022A001F7945 /* main.m */; };
@@ -21,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02430A651444DF8300CFDD14 /* MOSDownloadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOSDownloadOperation.h; sourceTree = "<group>"; };
+		02430A661444DF8300CFDD14 /* MOSDownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOSDownloadOperation.m; sourceTree = "<group>"; };
 		027B891C143F022A001F7945 /* MOSA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MOSA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		027B8920143F022A001F7945 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		027B8923143F022A001F7945 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -108,6 +111,8 @@
 				028A5FC314424E7200E92ED4 /* MOSServerWindowController.m */,
 				028A5FBC14424DF000E92ED4 /* ServerWindow.xib */,
 				027B8927143F022A001F7945 /* Supporting Files */,
+				02430A651444DF8300CFDD14 /* MOSDownloadOperation.h */,
+				02430A661444DF8300CFDD14 /* MOSDownloadOperation.m */,
 			);
 			path = MOSA;
 			sourceTree = "<group>";
@@ -203,6 +208,7 @@
 				027B8953143F12FF001F7945 /* RegexKitLite.m in Sources */,
 				028A5FC414424E7200E92ED4 /* MOSServerWindowController.m in Sources */,
 				028A5FC8144258C000E92ED4 /* MOSPlayer.m in Sources */,
+				02430A671444DF8300CFDD14 /* MOSDownloadOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
