@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0238FF9F144647C4001362FE /* MOSFolderPaths.m in Sources */ = {isa = PBXBuildFile; fileRef = 0238FF9E144647C4001362FE /* MOSFolderPaths.m */; };
 		02430A671444DF8300CFDD14 /* MOSDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 02430A661444DF8300CFDD14 /* MOSDownloadOperation.m */; };
 		027B8921143F022A001F7945 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027B8920143F022A001F7945 /* Cocoa.framework */; };
 		027B892B143F022A001F7945 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 027B8929143F022A001F7945 /* InfoPlist.strings */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0238FF9D144647C4001362FE /* MOSFolderPaths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOSFolderPaths.h; sourceTree = "<group>"; };
+		0238FF9E144647C4001362FE /* MOSFolderPaths.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOSFolderPaths.m; sourceTree = "<group>"; };
 		02430A651444DF8300CFDD14 /* MOSDownloadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOSDownloadOperation.h; sourceTree = "<group>"; };
 		02430A661444DF8300CFDD14 /* MOSDownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOSDownloadOperation.m; sourceTree = "<group>"; };
 		027B891C143F022A001F7945 /* MOSA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MOSA.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +103,10 @@
 			isa = PBXGroup;
 			children = (
 				028A5FC51442587900E92ED4 /* Data */,
+				02430A651444DF8300CFDD14 /* MOSDownloadOperation.h */,
+				02430A661444DF8300CFDD14 /* MOSDownloadOperation.m */,
+				0238FF9D144647C4001362FE /* MOSFolderPaths.h */,
+				0238FF9E144647C4001362FE /* MOSFolderPaths.m */,
 				027B8951143F12FF001F7945 /* RegexKitLite.h */,
 				027B8952143F12FF001F7945 /* RegexKitLite.m */,
 				027B893F143F024E001F7945 /* MOSServerWrapper.h */,
@@ -111,8 +118,6 @@
 				028A5FC314424E7200E92ED4 /* MOSServerWindowController.m */,
 				028A5FBC14424DF000E92ED4 /* ServerWindow.xib */,
 				027B8927143F022A001F7945 /* Supporting Files */,
-				02430A651444DF8300CFDD14 /* MOSDownloadOperation.h */,
-				02430A661444DF8300CFDD14 /* MOSDownloadOperation.m */,
 			);
 			path = MOSA;
 			sourceTree = "<group>";
@@ -209,6 +214,7 @@
 				028A5FC414424E7200E92ED4 /* MOSServerWindowController.m in Sources */,
 				028A5FC8144258C000E92ED4 /* MOSPlayer.m in Sources */,
 				02430A671444DF8300CFDD14 /* MOSDownloadOperation.m in Sources */,
+				0238FF9F144647C4001362FE /* MOSFolderPaths.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +299,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MOSA/MOSA-Prefix.pch";
 				INFOPLIST_FILE = "MOSA/MOSA-Info.plist";
+				OTHER_CFLAGS = "-Werror";
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -305,6 +312,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MOSA/MOSA-Prefix.pch";
 				INFOPLIST_FILE = "MOSA/MOSA-Info.plist";
+				OTHER_CFLAGS = "-Werror";
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
